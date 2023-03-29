@@ -1,3 +1,5 @@
+import Navbar from './Navbar/page'
+import Chat from './[id]/page'
 import './globals.css'
 
 export const metadata = {
@@ -11,8 +13,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className='h-full'>
+      <body className='bg-slate-100/20 h-full w-full overflow-hidden'>
+        <div className='flex h-full'>
+          <div className='flex-none w-1/6'>
+            <Navbar />
+          </div>
+          <div className='flex-1'>
+            <Chat />
+          </div>
+        </div>
+      </body>
     </html>
   )
 }
